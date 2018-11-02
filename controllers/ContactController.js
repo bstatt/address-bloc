@@ -32,7 +32,7 @@ module.exports = class ContactController {
     ];
   }
 
-  addContact(name, phone, email){
-    return Contact.create({name, phone, email})
+  addContact(name, phone, Email){
+    return Contact.create({name, phone, Email})
   }
 }
