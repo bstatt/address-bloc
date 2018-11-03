@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn(
       'Contacts',
-      'email',
+      'Email',
       Sequelize.STRING
     )
     /*
@@ -19,7 +19,7 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.removeColumn(
       'Contacts',
-      'email'
+      'Email'
     )
     /*
       Add reverting commands here.

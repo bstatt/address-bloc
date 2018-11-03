@@ -19,7 +19,7 @@ describe("ContactController", () => {
       .then((contact) => {
         expect(contact.name).toBe("Alice");
         expect(contact.phone).toBe("001-101-1010");
-        expect(contact.email).toBe("test@example.com");
+        expect(contact.Email).toBe("test@example.com");
         done();
       })
       .catch((err) => {
@@ -90,7 +90,7 @@ describe("ContactController", () => {
                 let contact = this.book.iterativeSearch(contacts, "Magus Johnson");
                 expect(contact.name).toBe("Magus Johnson");
                 expect(contact.phone).toBe("101-101-110");
-                expect(contact.email).toBe("magus@squaresoft.com");
+                expect(contact.Email).toBe("magus@squaresoft.com");
                 done();
               })
               .catch((err) => {
@@ -139,7 +139,7 @@ describe("ContactController", () => {
                     let contact = this.book.binarySearch(sort(contacts, "Magus Johnson"));
                     expect(contact.name).toBe("Magus Johnson");
                     expect(contact.phone).toBe("101-101-110");
-                    expect(contact.email).toBe("magus@squaresoft.com");
+                    expect(contact.Email).toBe("magus@squaresoft.com");
                     done();
                   })
                   .catch((err) => {
@@ -178,7 +178,7 @@ describe("ContactController", () => {
               expect(contact).not.toBeNull;
               expect(contact.name).toBe("Solid Snake");
               expect(contact.phone).toBe("100-010-101");
-              expect(contact.email).toBe("snake@konami.com");
+              expect(contact.Email).toBe("snake@konami.com");
               done();
             })
             .catch((err) => {
@@ -237,6 +237,6 @@ describe("ContactController", () => {
         });
 
       });
-      
+
     });
 });
