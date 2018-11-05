@@ -115,4 +115,52 @@ module.exports = class ContactController {
     }
     return null;
   }
+
+  getContacts(){
+    return Contact.findAll()
+  }
+
+  delete(id){
+    return Contact.destroy({
+      where: {id}
+    })
+  }
+
+  search(name){
+    return Contact.findOne({
+      where: {name}
+    });
+  }
+
+  binarySearch(contacts, target){
+    let min = 0;
+    let max = contacts.length - 1;
+    let mid;
+
+    while(min <= max) {
+
+// #1
+      mid = Math.floor((min + max) / 2);
+      let currentContact = contacts[mid];
+
+// #2
+      if(currentContact.name > target){ //target is before element at mid, eliminate upper bound
+        max = mid - 1;
+      } else if(currentContact.name < target){ //target is after element at mid, eliminate lower bound
+        min = mid - 1;
+      } else { //element found, return it
+        return contacts[mid];
+      }
+    }
+    return null;
+  }
+
+  iterativeSearch(contacts, target){
+    for(let contact of contacts){
+      if(contact.name.toLowerCase() === target.toLowerCase()){
+        return contact;
+      }
+    }
+    return null;
+  }
 }
